@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -17,8 +18,8 @@ import retrofit2.Response;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    EditText etEmail, etNome, etSenha;
-    FancyButton btnRegistrar;
+    EditText etEmail, etNome, etSenha, etCPF, etConfirmaSenha;
+    Button btnRegistrar;
     Usuario user = new Usuario();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +31,8 @@ public class RegisterActivity extends AppCompatActivity {
         etNome = findViewById(R.id.etNome);
         etSenha = findViewById(R.id.etSenha);
         btnRegistrar = findViewById(R.id.btnRegistrar);
+        etCPF = findViewById(R.id.etCPF);
+        etConfirmaSenha = findViewById(R.id.etConfirmaSenha);
 
         btnRegistrar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,6 +62,7 @@ public class RegisterActivity extends AppCompatActivity {
         user.setSenha("123456");
         user.setId("teste@teste.com1");
         user.setNome("teste");
+        user.setCPF("11111111111");
 
         Call<Usuario> call = new RetrofitInit(RegisterActivity.this).getUsuarioService().register(user);
         call.enqueue(new Callback<Usuario>() {

@@ -6,15 +6,18 @@ public class Usuario {
     String senha;
     String id;
     String nome;
+    String CPF;
+
 
     public Usuario() {
     }
 
-    public Usuario(String email, String senha, String id, String nome) {
+    public Usuario(String email, String senha, String id, String nome, String CPF) {
         this.email = email;
         this.senha = senha;
         this.id = id;
         this.nome = nome;
+        this.CPF = CPF;
     }
 
     public String getEmail() {
@@ -49,6 +52,14 @@ public class Usuario {
         this.nome = nome;
     }
 
+    public String getCPF() {
+        return CPF;
+    }
+
+    public void setCPF(String CPF) {
+        this.CPF = CPF;
+    }
+
     @Override
     public String toString() {
         return "Usuario{" +
@@ -56,6 +67,7 @@ public class Usuario {
                 ", senha='" + senha + '\'' +
                 ", id='" + id + '\'' +
                 ", nome='" + nome + '\'' +
+                ", CPF='" + CPF + '\'' +
                 '}';
     }
 }

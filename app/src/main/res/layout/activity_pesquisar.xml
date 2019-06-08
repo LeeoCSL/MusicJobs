@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PesquisarActivity">
+    tools:context=".PesquisarActivity"
+    android:background="@color/fundo">
 
     <TextView
         android:id="@+id/textView"
@@ -89,9 +90,12 @@
         android:layout_marginEnd="64dp"
         android:layout_marginRight="64dp"
         android:layout_marginBottom="32dp"
-        android:background="@drawable/btn_border_green"
-        android:text="Pesquisar"
+        android:background="@drawable/btn_orange"
+        android:text="PESQUISAR"
+        android:textStyle="bold"
+        android:textColor="@color/titulo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
 </android.support.constraint.ConstraintLayout>

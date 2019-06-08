@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:usesCleartextTraffic="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PesquisarActivity">
+        <activity android:name=".ResultadoActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,8 +21,8 @@
         </activity>
         <activity android:name=".MainActivity" />
         <activity android:name=".RegisterActivity" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".ResultadoActivity"></activity>
+        <activity android:name=".PesquisarActivity" />
+        <activity android:name=".LoginActivity"></activity>
     </application>
 
 </manifest>

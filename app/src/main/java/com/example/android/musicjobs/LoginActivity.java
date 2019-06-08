@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -16,13 +17,13 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity {
-    FancyButton btn_login;
-    FancyButton btn_registrar_se;
+    Button btn_login;
+    Button btn_registrar_se;
 
     EditText et_email;
     EditText et_senha;
 
-    TextView tvDigitada, tvBD;
+
 
     Usuario user = new Usuario();
 
@@ -35,8 +36,7 @@ public class LoginActivity extends AppCompatActivity {
         btn_registrar_se = findViewById(R.id.btn_registrar_se);
         et_email = findViewById(R.id.et_email);
         et_senha = findViewById(R.id.et_senha);
-        tvDigitada = findViewById(R.id.tvDigitada);
-        tvBD = findViewById(R.id.tvBD);
+
 
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,8 +80,7 @@ public class LoginActivity extends AppCompatActivity {
         call.enqueue(new Callback<Usuario>() {
             @Override
             public void onResponse(Call<Usuario> call, Response<Usuario> response) {
-                tvDigitada.setText(user.getSenha());
-                tvBD.setText(response.body().getSenha());
+
                 if(response.body().getSenha().equals(senha)){
 
                     Toast.makeText(LoginActivity.this, "logou", Toast.LENGTH_SHORT).show();
