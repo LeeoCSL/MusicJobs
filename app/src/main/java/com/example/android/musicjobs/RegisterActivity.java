@@ -58,10 +58,10 @@ public class RegisterActivity extends AppCompatActivity {
 //            return;
 //        }
 
-        user.setEmail("teste@teste.com1");
+        user.setEmail("teste@teste.com2");
         user.setSenha("123456");
-        user.setId("teste@teste.com1");
-        user.setNome("teste");
+        user.setId("teste@teste.com2");
+        user.setNome("teste2");
         user.setCPF("11111111111");
 
         Call<Usuario> call = new RetrofitInit(RegisterActivity.this).getUsuarioService().register(user);

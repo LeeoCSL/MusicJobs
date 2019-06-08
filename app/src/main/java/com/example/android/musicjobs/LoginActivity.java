@@ -87,7 +87,8 @@ public class LoginActivity extends AppCompatActivity {
                     startActivity(new Intent(LoginActivity.this, PesquisarActivity.class));
 
                 }else{
-                    Toast.makeText(LoginActivity.this, "senha invalida", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(LoginActivity.this, "senha invalida", Toast.LENGTH_SHORT).show();
+                    et_senha.setError("Senha invalida");
                 }
             }
 

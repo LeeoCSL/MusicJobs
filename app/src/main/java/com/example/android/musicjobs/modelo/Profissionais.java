@@ -4,12 +4,12 @@ public class Profissionais {
 
     String nome;
     String profissao;
-    int rating;
+    float rating;
 
     public Profissionais() {
     }
 
-    public Profissionais(String nome, String profissao, int rating) {
+    public Profissionais(String nome, String profissao, float rating) {
         this.nome = nome;
         this.profissao = profissao;
         this.rating = rating;
@@ -31,11 +31,11 @@ public class Profissionais {
         this.profissao = profissao;
     }
 
-    public int getRating() {
+    public float getRating() {
         return rating;
     }
 
-    public void setRating(int rating) {
+    public void setRating(float rating) {
         this.rating = rating;
     }
 

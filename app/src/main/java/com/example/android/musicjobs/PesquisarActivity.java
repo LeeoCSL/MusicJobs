@@ -1,21 +1,47 @@
 package com.example.android.musicjobs;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 
 public class PesquisarActivity extends AppCompatActivity {
 
     Spinner spProfissao, spEstado, spCidade;
-
-    private String [] resProfissao = new String[]{"Selecione a profissão", "Guitarrista", "Baterista", "Baixista", "Vocal"};
-    private String [] resEstado = new String[]{"SP"};
-    private String [] resCidade = new String[]{"Selecione a Região", "Araraquara", "Araçatuba", "Assis", "Bauru", "Campinas",
-    "Itapetininga", "Litoral Sulpaulista", "Macro-Metropolitana Paulista", "Marilia", "Metropolitana de São Paulo",
-    "Piracicaba", "Presidente Prudente", "Ribeirão Preto", "São José do Rio Preto", "Vale do Paraiba Paulista"};
+    Button btnPesquisar;
+    private String[] resProfissao = new String[]{"Selecione a profissão",
+            "Baixista",
+            "Banda",
+            "Baterista",
+            "DJ",
+            "Engenheiro de som",
+            "Guitarrista",
+            "Organizador de Eventos",
+            "Técnico de iluminação",
+            "Técnico de som",
+            "Vocalista",
+    };
+    private String[] resEstado = new String[]{"SP"};
+    private String[] resCidade = new String[]{"Selecione a Região",
+            "Araraquara",
+            "Araçatuba",
+            "Assis",
+            "Bauru",
+            "Campinas",
+            "Itapetininga",
+            "Litoral Sulpaulista",
+            "Macro-Metropolitana Paulista",
+            "Marilia",
+            "Metropolitana de São Paulo",
+            "Piracicaba",
+            "Presidente Prudente",
+            "Ribeirão Preto",
+            "São José do Rio Preto",
+            "Vale do Paraiba Paulista"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +51,7 @@ public class PesquisarActivity extends AppCompatActivity {
         spProfissao = findViewById(R.id.spProfissao);
         spEstado = findViewById(R.id.spEstado);
         spCidade = findViewById(R.id.spCidade);
+        btnPesquisar = findViewById(R.id.btnPesquisar);
 
 
         ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, resProfissao);
@@ -80,6 +107,14 @@ public class PesquisarActivity extends AppCompatActivity {
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+        btnPesquisar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(PesquisarActivity.this, ResultadoActivity.class));
 
             }
         });
