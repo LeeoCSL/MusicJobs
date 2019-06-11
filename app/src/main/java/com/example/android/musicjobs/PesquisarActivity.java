@@ -114,7 +114,29 @@ public class PesquisarActivity extends AppCompatActivity {
         btnPesquisar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(PesquisarActivity.this, ResultadoActivity.class));
+                Intent i = new Intent(PesquisarActivity.this, ResultadoActivity.class);
+                if(spProfissao.getSelectedItem().toString().equals("Baixista")){
+                    i.putExtra("prof", "Baixista");
+                }if(spProfissao.getSelectedItem().toString().equals("Banda")){
+                    i.putExtra("prof", "Banda");
+                }if(spProfissao.getSelectedItem().toString().equals("Baterista")){
+                    i.putExtra("prof", "Baterista");
+                }if(spProfissao.getSelectedItem().toString().equals("DJ")){
+                    i.putExtra("prof", "DJ");
+                }if(spProfissao.getSelectedItem().toString().equals("Engenheiro de som")){
+                    i.putExtra("prof", "Engenheiro de som");
+                }if(spProfissao.getSelectedItem().toString().equals("Guitarrista")){
+                    i.putExtra("prof", "Guitarrista");
+                }if(spProfissao.getSelectedItem().toString().equals("Organizador de Eventos")){
+                    i.putExtra("prof", "Organizador de Eventos");
+                }if(spProfissao.getSelectedItem().toString().equals("Técnico de iluminação")){
+                    i.putExtra("prof", "Técnico de iluminação");
+                }if(spProfissao.getSelectedItem().toString().equals("Técnico de som")){
+                    i.putExtra("prof", "Técnico de som");
+                }if(spProfissao.getSelectedItem().toString().equals("Vocalista")){
+                    i.putExtra("prof", "Vocalista");
+                }
+                startActivity(i);
 
             }
         });
